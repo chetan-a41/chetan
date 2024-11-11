@@ -1,0 +1,22 @@
+package com.demo;
+
+public class ShiftDemo {
+
+	public static void main(String[] args) {
+
+		int num = 100;
+		System.out.println("Shift: " + (num >> 3));
+		
+		// Shift operator takes binary version of the number and shifts the specified number of bits
+		
+		int result1 = (num >> 2) & 1;	// Bitwise AND
+		
+		System.out.println(result1);
+		
+		int result2 = (num >> 2) | 1;	// Bitwise OR
+		
+		System.out.println(result2);
+
+	}
+
+}
