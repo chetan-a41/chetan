@@ -1,0 +1,64 @@
+QUESTION--1 Write a program to input two numbers and find the maximum between two numbers using the conditional/ternary operator.
+ 
+ANSWER--
+package com.demo;
+import java.util.Scanner;
+public class MaxBetweenTwoNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the first number: ");     // Input two numbers from the user
+        int num1 = sc.nextInt();
+        System.out.print("Enter the second number: ");
+        int num2 = sc.nextInt();
+        int max = (num1 > num2) ? num1 : num2;        // Use the conditional operator to find the maximum
+        System.out.println("The maximum between " + num1 + " and " + num2 + " is: " + max);        // Display the result
+        sc.close();
+    }
+}
+
+Input: 
+Enter the first number: 1000
+Enter the second number: 400
+Output:
+The maximum between 1000 and 400is: 1000
+
+
+
+QUESTION--2//Write a program to declare  a variable for integer number.
+           //Assign a value to it and shift it to left and right using shift operators.
+           //You can use shift by 1 place,  shift by 2 places.
+           //Print output for both left & right shifts.
+
+ANSWER--2
+package com.demo;
+public class ShiftOperators {
+    public static void main(String[] args) {
+        // Declare an integer variable and assign a value
+        int number = 10; // Binary representation: 1010
+
+        // Left shift by 1 place
+        int leftShift1 = number << 1; // Multiplies by 2^1
+        // Left shift by 2 places
+        int leftShift2 = number << 2; // Multiplies by 2^2
+
+        // Right shift by 1 place
+        int rightShift1 = number >> 1; // Divides by 2^1
+        // Right shift by 2 places
+        int rightShift2 = number >> 2; // Divides by 2^2
+
+        // Print the results
+        System.out.println("Original number: " + number);
+        System.out.println("Left shift by 1 place: " + leftShift1);
+        System.out.println("Left shift by 2 places: " + leftShift2);
+        System.out.println("Right shift by 1 place: " + rightShift1);
+        System.out.println("Right shift by 2 places: " + rightShift2);
+    }
+}
+
+Output:
+
+Original number: 10
+Left shift by 1 place: 20
+Left shift by 2 places: 40
+Right shift by 1 place: 5
+Right shift by 2 places: 2
