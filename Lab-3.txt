@@ -92,7 +92,7 @@ class Employee extends User {
 }
 
 // Main Class
-public class InheritanceDemo {
+class InheritanceDemo {
     public static void main(String[] args) {
         // Create an Employee object
         Employee employee = new Employee("Shyam", 24, 80000);
