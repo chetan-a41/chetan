@@ -1,0 +1,108 @@
+QUESTION--1 
+
+Create a Book class with bookId, bookName and authorName.Create parameterized constructor to initialize the object. Create an ArrayList of type Book and 
+store all book objects into collections and display all book details.
+
+Answer--1
+
+package com.demo;
+//Create a Book class with bookId, bookName and authorName.Create parameterized constructor to initialize the object. 
+//Create an ArrayList of type Book and store all book objects into collections and display all book details.
+import java.util.ArrayList;
+
+class Book {
+    private int bookId;
+    private String bookName;
+    private String authorName;
+
+    // Parameterized constructor to initialize the book object
+    public Book(int bookId, String bookName, String authorName) {
+        this.bookId = bookId;
+        this.bookName = bookName;
+        this.authorName = authorName;
+    }
+
+    // Getter methods to retrieve book details
+    public int getBookId() {
+        return bookId;
+    }
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    // Overriding toString() to display book details
+    @Override
+    public String toString() {
+        return "Book ID: " + bookId + ", Book Name: " + bookName + ", Author Name: " + authorName;
+    }
+}
+
+public class BookCollectionDemo {
+    public static void main(String[] args) {
+        // Create an ArrayList of type Book
+        ArrayList<Book> bookList = new ArrayList<>();
+
+        // Adding Book objects to the ArrayList
+        bookList.add(new Book(1, "The Alchemist", "Paulo Coelho"));
+        bookList.add(new Book(2, "To Kill a Mockingbird", "Harper Lee"));
+        bookList.add(new Book(3, "1984", "George Orwell"));
+
+        // Displaying all book details
+        System.out.println("Book Collection:");
+        for (Book book : bookList) {
+            System.out.println(book);
+        }
+    }
+}
+
+OUTPUT--
+Book Collection:
+Book ID: 1, Book Name: The Alchemist, Author Name: Paulo Coelho
+Book ID: 2, Book Name: To Kill a Mockingbird, Author Name: Harper Lee
+Book ID: 3, Book Name: 1984, Author Name: George Orwell
+
+
+QUESTION--2 
+create ArrayList with few even and odd members in it. Write a Java program that calculates the sum of all even numbers present in an ArrayList of integers.
+
+ANSWER--2
+package com.demo;
+
+//create ArrayList with few even and odd members in it. 
+//Write a Java program that calculates the sum of all even numbers present in an ArrayList of integers.
+import java.util.ArrayList;
+
+public class EvenSumCalculator {
+  public static void main(String[] args) {
+      // Create an ArrayList with a mix of even and odd numbers
+      ArrayList<Integer> numbers = new ArrayList<>();
+      numbers.add(10);
+      numbers.add(20);
+      numbers.add(30);
+      numbers.add(40);
+      numbers.add(50);
+      numbers.add(60);
+
+      // Calculate the sum of all even numbers
+      int evenSum = 0;
+      for (int number : numbers) {
+          if (number % 2 == 0) { // Check if the number is even
+              evenSum += number;
+          }
+      }
+
+      // Display the result
+      System.out.println("ArrayList: " + numbers);
+      System.out.println("Sum of even numbers: " + evenSum);
+  }
+}
+
+OUTPUT--
+ArrayList: [10, 20, 30, 40, 50, 60]
+Sum of even numbers: 210
+
