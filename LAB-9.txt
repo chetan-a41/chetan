@@ -1,0 +1,167 @@
+Q1--Create a HashMap as phonedirectory. Add entries in phonedirectory as  id, name and number.
+      With user input take name of a user and search in phonedirectory.
+ANS--1
+//Display result whether name is available in phonedirectory or not using HashMap methods.
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class PhoneDirectory {
+    public static void main(String[] args) {
+        // Create a HashMap to store phone directory entries
+        HashMap<Integer, String[]> phoneDirectory = new HashMap<>();
+
+        // Adding entries to the phone directory (id, name, number)
+        phoneDirectory.put(101, new String[]{"John Doe", "123-456-7890"});
+        phoneDirectory.put(102, new String[]{"Jane Smith", "987-654-3210"});
+        phoneDirectory.put(103, new String[]{"Mike Johnson", "555-123-4567"});
+        phoneDirectory.put(104, new String[]{"Emily Davis", "555-987-6543"});
+        phoneDirectory.put(105, new String[]{"Daniel Lee", "444-555-6666"});
+
+        // Scanner to take user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Take user input for the name to search
+        System.out.print("Enter the name to search in the phone directory: ");
+        String nameToSearch = scanner.nextLine();
+
+        // Search for the name in the phone directory
+        boolean found = false;
+        for (Integer id : phoneDirectory.keySet()) {
+            String[] entry = phoneDirectory.get(id);
+            String name = entry[0];  // Name is stored at index 0 in the array
+            if (name.equalsIgnoreCase(nameToSearch)) {
+                System.out.println("Name: " + name);
+                System.out.println("ID: " + id);
+                System.out.println("Phone Number: " + entry[1]);
+                found = true;
+                break;
+            }
+        }
+
+        // Display result whether name is available or not
+        if (!found) {
+            System.out.println("The name '" + nameToSearch + "' is not available in the phone directory.");
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
+
+Output1:
+Enter the name to search in the phone directory: John Doe
+Name: John Doe
+ID: 101
+Phone Number: 123-456-7890
+
+Output2:
+Enter the name to search in the phone directory: Alice Brown
+The name 'Alice Brown' is not available in the phone directory.
+
+
+Q2-- Create a TreeMap as userdetails. Add entries in   userdetails  as name and age.
+     create methods as add users, search users in userdetails with exit method as well.
+
+ANS--2
+//Display result as menu to work on all userdetails methods.
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class UserDetails {
+    
+    // TreeMap to store user details (name as key and age as value)
+    private static TreeMap<String, Integer> userdetails = new TreeMap<>();
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while (true) {
+            // Display the menu
+            System.out.println("\nMenu:");
+            System.out.println("1. Add User");
+            System.out.println("2. Search User");
+            System.out.println("3. Exit");
+            System.out.print("Choose an option (1-3): ");
+            
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline left by nextInt()
+
+            switch (choice) {
+                case 1:
+                    addUser(scanner);
+                    break;
+                case 2:
+                    searchUser(scanner);
+                    break;
+                case 3:
+                    System.out.println("Exiting program.");
+                    scanner.close();
+                    return;  // Exit the program
+                default:
+                    System.out.println("Invalid choice! Please choose a valid option.");
+            }
+        }
+    }
+    
+    // Method to add a user
+    public static void addUser(Scanner scanner) {
+        System.out.print("Enter the name of the user: ");
+        String name = scanner.nextLine();
+        
+        System.out.print("Enter the age of " + name + ": ");
+        int age = scanner.nextInt();
+        scanner.nextLine(); // Consume newline left by nextInt()
+
+        // Add the user details to the TreeMap
+        userdetails.put(name, age);
+        System.out.println("User " + name + " added successfully.");
+    }
+
+    // Method to search for a user by name
+    public static void searchUser(Scanner scanner) {
+        System.out.print("Enter the name to search for: ");
+        String name = scanner.nextLine();
+
+        // Search for the user in the TreeMap
+        if (userdetails.containsKey(name)) {
+            int age = userdetails.get(name);
+            System.out.println("User found: Name: " + name + ", Age: " + age);
+        } else {
+            System.out.println("User not found.");
+        }
+    }
+}
+
+Output:
+Menu:
+1. Add User
+2. Search User
+3. Exit
+Choose an option (1-3): 1
+Enter the name of the user: John
+Enter the age of John: 25
+User John added successfully.
+
+Menu:
+1. Add User
+2. Search User
+3. Exit
+Choose an option (1-3): 1
+Enter the name of the user: Alice
+Enter the age of Alice: 30
+User Alice added successfully.
+
+Menu:
+1. Add User
+2. Search User
+3. Exit
+Choose an option (1-3): 2
+Enter the name to search for: John
+User found: Name: John, Age: 25
+
+Menu:
+1. Add User
+2. Search User
+3. Exit
+Choose an option (1-3): 3
+Exiting program.
