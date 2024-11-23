@@ -1,0 +1,76 @@
+Q1--Write a program to prints numbers from 0 to 4 using thread
+
+ANS--1
+public class PrintNumbersUsingThread {
+    public static void main(String[] args) {
+        // Create a thread that prints numbers from 0 to 4
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // Loop to print numbers from 0 to 4
+                for (int i = 0; i < 5; i++) {
+                    System.out.println(i);
+                    try {
+                        Thread.sleep(500);  // Sleep for 500 milliseconds to simulate delay
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+        // Start the thread
+        thread.start();
+    }
+}
+
+Output:
+
+0
+1
+2
+3
+4
+
+
+
+
+Q2--  Write a program to prints 1 to 10 and sleep for 1000ms using thread.
+
+ANS--2
+public class PrintNumbersWithSleep {
+    public static void main(String[] args) {
+        // Create a thread that prints numbers from 1 to 10 with 1000ms delay
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // Loop to print numbers from 1 to 10
+                for (int i = 1; i <= 10; i++) {
+                    System.out.println(i);
+                    try {
+                        // Sleep for 1000 milliseconds (1 second)
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+        // Start the thread
+        thread.start();
+    }
+}
+
+Output:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
