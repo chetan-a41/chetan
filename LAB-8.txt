@@ -1,0 +1,118 @@
+Q1-- Write a Java program to associate the specified value with the specified key in a HashMap.
+
+ANS--1
+//Declare HashMap add 10 values as user input.
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        // Create a HashMap to store key-value pairs
+        HashMap<Integer, String> map = new HashMap<>();
+
+        // Scanner to take user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Adding 10 key-value pairs to the HashMap
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Enter key (integer) for pair " + i + ": ");
+            int key = scanner.nextInt();
+
+            // Consume the remaining newline
+            scanner.nextLine();
+
+            System.out.println("Enter value (string) for key " + key + ": ");
+            String value = scanner.nextLine();
+
+            // Put the key-value pair into the HashMap
+            map.put(key, value);
+        }
+
+        // Display the HashMap
+        System.out.println("HashMap contents: " + map);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
+
+
+Output:
+Enter key (integer) for pair 1: 
+101
+Enter value (string) for key 101: 
+Apple
+Enter key (integer) for pair 2: 
+102
+Enter value (string) for key 102: 
+Banana
+Enter key (integer) for pair 3: 
+103
+Enter value (string) for key 103: 
+Cherry
+Enter key (integer) for pair 4: 
+104
+Enter value (string) for key 104: 
+Date
+Enter key (integer) for pair 5: 
+105
+Enter value (string) for key 105: 
+Elderberry
+Enter key (integer) for pair 6: 
+106
+Enter value (string) for key 106: 
+Fig
+Enter key (integer) for pair 7: 
+107
+Enter value (string) for key 107: 
+Grape
+Enter key (integer) for pair 8: 
+108
+Enter value (string) for key 108: 
+Honeydew
+Enter key (integer) for pair 9: 
+109
+Enter value (string) for key 109: 
+Indian Fig
+Enter key (integer) for pair 10: 
+110
+Enter value (string) for key 110: 
+Jackfruit
+
+HashMap contents: {101=Apple, 102=Banana, 103=Cherry, 104=Date, 105=Elderberry, 106=Fig, 107=Grape, 108=Honeydew, 109=Indian Fig, 110=Jackfruit}
+
+
+Q2-- Write a Java program to check whether a HashMap contains key-value mappings (empty) or not.
+
+ANS--2
+import java.util.HashMap;
+
+public class HashMapCheckEmpty {
+    public static void main(String[] args) {
+        // Create a HashMap
+        HashMap<Integer, String> map = new HashMap<>();
+
+        // Check if the HashMap is empty
+        if (map.isEmpty()) {
+            System.out.println("The HashMap is empty.");
+        } else {
+            System.out.println("The HashMap contains key-value mappings.");
+        }
+
+        // Adding some entries to the HashMap
+        map.put(1, "Apple");
+        map.put(2, "Banana");
+
+        // Check again if the HashMap is empty after adding elements
+        if (map.isEmpty()) {
+            System.out.println("The HashMap is empty.");
+        } else {
+            System.out.println("The HashMap contains key-value mappings.");
+        }
+    }
+}
+
+Output:
+The HashMap is empty.
+The HashMap contains key-value mappings.
+
