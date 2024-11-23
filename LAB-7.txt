@@ -1,0 +1,86 @@
+Q1-- Write a Java program to append the specified element to the end of a HashSet.
+ 
+ANS--1
+//( use add() method)
+import java.util.HashSet;
+
+public class AppendToHashSet {
+    public static void main(String[] args) {
+        // Create a HashSet
+        HashSet<String> set = new HashSet<>();
+
+        // Add some initial elements
+        set.add("Apple");
+        set.add("Banana");
+        set.add("Cherry");
+
+        // Print the HashSet before adding the element
+        System.out.println("HashSet before adding element: " + set);
+
+        // Append a specified element
+        String newElement = "Date";
+        boolean isAdded = set.add(newElement);
+
+        // Check if the element was added successfully
+        if (isAdded) {
+            System.out.println("Element '" + newElement + "' added to the HashSet.");
+        } else {
+            System.out.println("Element '" + newElement + "' already exists in the HashSet.");
+        }
+
+        // Print the HashSet after adding the element
+        System.out.println("HashSet after adding element: " + set);
+    }
+}
+
+
+
+Output:
+
+HashSet before adding element: [Apple, Banana, Cherry]
+Element 'Date' added to the HashSet.
+HashSet after adding element: [Apple, Banana, Cherry, Date]
+
+
+Q2-- Write a program to declare stack. Store 10 elements into it. display stack elements.
+
+ANS--2
+//Remove 4 elements from stack and display it again.
+import java.util.Stack;
+
+public class StackExample {
+    public static void main(String[] args) {
+        // Declare a stack
+        Stack<Integer> stack = new Stack<>();
+
+        // Store 10 elements into the stack
+        for (int i = 1; i <= 10; i++) {
+            stack.push(i);
+        }
+
+        // Display stack elements
+        System.out.println("Stack elements: " + stack);
+
+        // Remove 4 elements from the stack
+        System.out.println("Removing 4 elements...");
+        for (int i = 0; i < 4; i++) {
+            if (!stack.isEmpty()) {
+                System.out.println("Popped: " + stack.pop());
+            }
+        }
+
+        // Display stack elements after removal
+        System.out.println("Stack elements after removal: " + stack);
+    }
+}
+
+
+Output:
+
+Stack elements: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Removing 4 elements...
+Popped: 10
+Popped: 9
+Popped: 8
+Popped: 7
+Stack elements after removal: [1, 2, 3, 4, 5, 6]
